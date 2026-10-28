@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brick Sweep Support</title>
+<meta name="description" content="Help with Brick Sweep, the swipe-to-sweep block puzzle you play against your friends.">
+<style>
+  :root {
+    --ink: #3d2b5c;
+    --ink-soft: #6e5a8c;
+    --accent: #e8458f;
+    --card: rgba(255, 255, 255, 0.82);
+    --card-line: rgba(61, 43, 92, 0.08);
+    --sky-top: #ffc8b0;
+    --sky-mid: #f4bfd6;
+    --sky-bottom: #cdb6ff;
+    --chip: #f3ecff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #f4eefc;
+      --ink-soft: #c2b4d8;
+      --accent: #ff7ab3;
+      --card: rgba(38, 28, 58, 0.86);
+      --card-line: rgba(255, 255, 255, 0.08);
+      --sky-top: #3a2a4f;
+      --sky-mid: #2c2142;
+      --sky-bottom: #1d1630;
+      --chip: #3a2d55;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: linear-gradient(160deg, var(--sky-top) 0%, var(--sky-mid) 50%, var(--sky-bottom) 100%) fixed;
+    line-height: 1.5;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+  header { text-align: center; margin-bottom: 32px; }
+  .kicker {
+    font-size: 13px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 8px;
+  }
+  h1 { font-size: clamp(36px, 8vw, 56px); font-weight: 900; line-height: 1.05; margin: 0; }
+  .lead { font-size: 18px; font-weight: 600; color: var(--ink-soft); margin: 12px auto 0; max-width: 520px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-line);
+    border-radius: 24px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: 0 10px 30px rgba(61, 43, 92, 0.10);
+    backdrop-filter: blur(6px);
+  }
+  .contact { text-align: center; }
+  .contact h2 { margin-top: 0; }
+  .button {
+    display: inline-block; margin-top: 8px; padding: 14px 28px; border-radius: 18px;
+    background: #c9b2ff; color: #2c1f45; font-weight: 900; font-size: 18px; text-decoration: none;
+    box-shadow: 0 5px 0 #9a83d6;
+  }
+  .button:active { transform: translateY(3px); box-shadow: 0 2px 0 #9a83d6; }
+  .small { font-size: 14px; color: var(--ink-soft); font-weight: 600; }
+  h2 { font-size: 22px; font-weight: 900; margin: 32px 0 8px; }
+  details { border-top: 1px solid var(--card-line); padding: 14px 0; }
+  details:first-of-type { border-top: 0; padding-top: 0; }
+  summary {
+    cursor: pointer; font-weight: 800; font-size: 17px; list-style: none;
+    display: flex; justify-content: space-between; gap: 12px; align-items: baseline;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-weight: 900; color: var(--accent); font-size: 22px; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p, details ul { margin: 10px 0 0; color: var(--ink-soft); font-weight: 600; }
+  details ul { padding-left: 20px; }
+  .chip {
+    display: inline-block; padding: 1px 8px; border-radius: 8px; background: var(--chip);
+    color: var(--ink); font-weight: 800; font-size: 0.92em; white-space: nowrap;
+  }
+  a { color: var(--accent); font-weight: 800; }
+  footer { text-align: center; margin-top: 40px; }
+  footer a { margin: 0 10px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="kicker">Swipe-to-sweep puzzle game</p>
+    <h1>Brick Sweep Support</h1>
+    <p class="lead">Answers to common questions, and a way to reach a real person.</p>
+  </header>
+
+  <section class="card contact">
+    <h2>Need help?</h2>
+    <p class="small">Email us and say which device you're playing on, and what happened.</p>
+    <a class="button" href="mailto:scores_punnets2r@icloud.com?subject=Brick%20Sweep%20support">Email support</a>
+    <p class="small">scores_punnets2r@icloud.com</p>
+  </section>
+
+  <section class="card">
+    <h2 style="margin-top:0">Playing</h2>
+    <details>
+      <summary>How do I learn the game?</summary>
+      <p>Tap <span class="chip">Tutorial</span> on the main menu. It teaches the whole game in about a minute, by playing it.</p>
+    </details>
+    <details>
+      <summary>What's the difference between Casual and Time Attack?</summary>
+      <p>Casual has no clock: build the biggest score you can until the board fills up. Time Attack races the clock, and every clear buys you more seconds.</p>
+    </details>
+    <details>
+      <summary>How does sweeping work?</summary>
+      <p>Match same-color 2×2 squares, then swipe across the meter above the board to send the sweep line across and wipe them all away. Sweeps charge the Super Sweep for a much bigger clear.</p>
+    </details>
+    <details>
+      <summary>How do I turn off sounds, music or vibration?</summary>
+      <p>Use the round buttons along the bottom of the main menu: light/dark mode, sound effects, music and vibration. The <span class="chip">ⓘ</span> button opens the About page.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2 style="margin-top:0">Challenges</h2>
+    <details>
+      <summary>How do I challenge a friend?</summary>
+      <p>Finish a Casual or Time Attack run and tap the purple share button on the results card. Send the link by Messages, Mail or anything else. Your friend plays your exact pieces, in the same order, with your score to beat.</p>
+    </details>
+    <details>
+      <summary>My friend tapped the link and nothing happened.</summary>
+      <p>Challenge links open in the game, so your friend needs Brick Sweep installed on their iPhone or iPad. Once it's installed, they can tap the link again, and the challenge lands under <span class="chip">Challenges ▸ Friends</span>.</p>
+    </details>
+    <details>
+      <summary>Can I name a challenge?</summary>
+      <p>Yes. After you save a run the game offers to name it, and you can rename any challenge with the pencil button on its card. Names go out with the challenge when you share it, so your friend sees the same name.</p>
+    </details>
+    <details>
+      <summary>When does the weekly challenge change?</summary>
+      <p>Every week, at midnight UTC between Sunday and Monday. That's Sunday at 7 PM Eastern in winter and 8 PM Eastern in summer. Everyone in the world gets the same pieces for the week.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2 style="margin-top:0">Game Center and your data</h2>
+    <details>
+      <summary>My scores aren't on the Global leaderboard.</summary>
+      <p>Check that you're signed in to Game Center in the Settings app. Scores post when a run ends, and the board can take a few minutes to update.</p>
+    </details>
+    <details>
+      <summary>Where are my saved games and challenges kept?</summary>
+      <p>On your device only. There's no account and no server. Deleting the app deletes your saved game, scores and challenges, so keep it installed to keep them. Game Center achievements and leaderboard scores stay with your Game Center account.</p>
+    </details>
+    <details>
+      <summary>I got a new phone. How do I get the game back?</summary>
+      <p>Open the App Store, tap your profile picture, then <span class="chip">Purchased</span>, and download Brick Sweep again at no charge. There are no in-app purchases to restore.</p>
+    </details>
+    <details>
+      <summary>How do I ask for a refund?</summary>
+      <p>Apple handles App Store refunds. Go to <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, sign in, and choose Brick Sweep.</p>
+    </details>
+    <details>
+      <summary>Does Brick Sweep collect my data?</summary>
+      <p>No. There are no ads, no analytics and no tracking. Read the full <a href="privacy.html">privacy policy</a>.</p>
+    </details>
+  </section>
+
+  <footer class="small">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:scores_punnets2r@icloud.com">Contact</a>
+  </footer>
+</main>
+</body>
+</html>
